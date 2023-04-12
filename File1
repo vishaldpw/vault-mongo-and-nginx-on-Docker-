@@ -1,0 +1,33 @@
+installation Steps vault, mongo and nginx on Docker 
+
+1) Launch  an EC2 instance
+
+2) install Docker Following instructions
+  https://docs.docker.com/engine/install/ubuntu/
+  
+ Sucess:
+ ubuntu@ip-172-31-41-133:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ubuntu@ip-172-31-41-133:~$
+
+
+3) install nginx using following command
+  
+    docker run --name nginx-server -it -d -p 3000:80 nginx:stable-perl
+    
+    Allow Access the tcp 3000
+    Access the nginx Server 
+    
+ 4) install mongo using following command
+  
+    docker run --name mongo-server -it -d -p 4000:27017 mongo
+    
+    Allow Access the tcp 4000
+    Access the  Server 
+    
+    5)  install vault using following command
+  
+    docker run -it -d --name vault-server --cap-add=IPC_LOCK -e 'VAULT_LOCAL_CONFIG={"storage": {"file": {"path": "/vault/file"}}, "listener": [{"tcp": { "address": "0.0.0.0:8200", "tls_disable": true}}], "default_lease_ttl": "168h", "max_lease_ttl": "720h", "ui": true}' -p 8200:8200 vault server
+    
+    Allow Access the tcp 8200
+    Access the  Server 
