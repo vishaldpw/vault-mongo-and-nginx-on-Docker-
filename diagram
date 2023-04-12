@@ -1,0 +1,11 @@
+Docker installed on 		Ubuntu 22			
+
+
+Service:Port              Exposed on (server Port)
+				
+nginx:80			            4000
+							
+mongoDB:27017		        	5000
+	
+Hashicorp-vault:8200			8200
+				
