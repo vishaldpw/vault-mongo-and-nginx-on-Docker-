@@ -32,7 +32,7 @@ ubuntu@ip-172-31-41-133:~$
     Allow Access the tcp 8200
     Access the  Server 
     
-    6) mysql
+    6) Similarly mysql steps
     
     
     docker run -it -d -p 5000:3306 --name mysql-server -e MYSQL_ROOT_PASSWORD=pass123  mysql
